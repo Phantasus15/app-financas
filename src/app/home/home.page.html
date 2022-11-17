@@ -1,20 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <div class="header">
+    <ion-avatar class="logo">
+      <img alt="logo" src="./assets/logo.png" class="logo">
+    </ion-avatar>
     <ion-title>
-      Blank
+      Kajin Finanças
     </ion-title>
+  </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" *ngFor="let user of users | async">
+  <div class="fundo">
+    <ion-avatar class="perfil">
+      <img alt="fotoperfil" [src]="user.photoURL">
+    </ion-avatar>
+    <p>{{user.nome}}</p>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="space-around">
+      <div class="input-div">
+      <ion-button (click)="chamarEntrada()" class="input-button"><p>R$ </p>{{entrada}}</ion-button>
+      <ion-label>Entrada de Capital</ion-label>
+      </div>
+      <div class="input-div">
+      <ion-button (click)="chamarSaida()" color="danger" class="input-button"><p>R$ </p>{{saida}}</ion-button>
+      <ion-label>Gastos Mensais</ion-label>
+      </div>
+    </div>
+
+    <div class="space-end">
+    <ion-item>
+      <ion-label>Rendimento Mensal</ion-label>
+      <h3 *ngIf="entrada>0 && saida>0" class="resultado-texto {{corResult}}">R${{resultado}}</h3>
+    </ion-item>
+    <ion-item>
+       <ion-button (click)="salvarRendimento()">Salvar Rendimento</ion-button>
+    </ion-item>
   </div>
+</div>
 </ion-content>

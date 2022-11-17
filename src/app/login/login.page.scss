@@ -1,0 +1,37 @@
+div.fundo{
+    min-width: 100vw;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.verde{
+    color:#1cd474;
+    --color:#1cd474;
+}
+
+ion-button{
+<<<<<<< HEAD
+    margin: 22px 0px;
+=======
+    margin: 20px 0px;
+>>>>>>> a003aedbb0f6d46f0b6de16ae1041d67fab3fab4
+}
+
+ion-avatar{
+    min-width: 80px;
+    min-height: 80px;
+    margin:30px 0px;
+}
+
+
+

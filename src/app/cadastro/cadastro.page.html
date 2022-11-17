@@ -1,0 +1,30 @@
+<ion-content>
+
+  <div class="fundo">
+    
+    <ion-avatar><img alt="logo" src="./assets/logo.png" class="logo"></ion-avatar>
+    <h4>Cadastro</h4>
+
+    <div class="form">
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" placeholder="Seu Nome" [(ngModel)]="nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Celular</ion-label>
+        <ion-input type="text" placeholder="Seu Celular" [(ngModel)]="celular"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" placeholder="Seu E-mail" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" placeholder="Sua Senha" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+    <ion-button (click)="cadastrar()">Cadastrar</ion-button>
+    <span>Possui conta? <p class="verde" [routerLink]="['/login']">Entrar</p></span>
+  </div>
+  </div>
+
+</ion-content>

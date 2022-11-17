@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+    <ion-back-button defaultHref="home"></ion-back-button>
+    <ion-avatar class="logo">
+      <img alt="logo" src="./assets/logo.png" class="logo">
+    </ion-avatar>
+    <ion-title>
+      Kajin Finanças
+    </ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="fundo">
+    <h2>Rendimentos do Ano</h2>
+    <div  *ngIf="(rendimentos | async)?.length">
+    <ion-item>
+      <div class="form">
+        <h6>Mês</h6><h6>Rendimento</h6><h6>Saída</h6>
+      </div>
+    </ion-item>
+    <ion-item *ngFor="let rend of rendimentos | async">
+      <div class="form">
+        <h6>{{rend.mesNome}}</h6><h6>R${{rend.rendimento}}</h6><h6>R${{rend.saida}}</h6>
+      </div>
+    </ion-item>
+  </div>
+
+</div>
+</ion-content>
